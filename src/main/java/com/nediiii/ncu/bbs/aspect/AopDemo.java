@@ -16,13 +16,13 @@ public class AopDemo {
 
     @Around("execution(* com.nediiii.ncu.bbs.controller.UserController.*(..))")
     public Object LogAroundUserController(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
-        logger.info("进入控制器");
+        logger.info("进入User控制器:");
         Object args[] = proceedingJoinPoint.getArgs();
         for (Object arg : args) {
             logger.info("参数是:"+arg);
         }
         Object object = proceedingJoinPoint.proceed();
-        logger.info("执行完成:");
+        logger.info("User控制器执行完成.");
         return object;
     }
 }

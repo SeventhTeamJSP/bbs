@@ -5,16 +5,18 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name = "comment", schema = "bbs", catalog = "")
+@Table(name = "comment", schema = "bbs")
 public class CommentEntity {
     private int id;
     private int userId;
     private int targetId;
     private int type;
+    private String content;
     private Timestamp createTime;
     private byte isDeleted;
     private byte isBlocked;
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)
     public int getId() {
@@ -53,6 +55,16 @@ public class CommentEntity {
 
     public void setType(int type) {
         this.type = type;
+    }
+
+    @Basic
+    @Column(name = "content", nullable = false)
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 
     @Basic

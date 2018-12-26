@@ -1,7 +1,6 @@
 package com.nediiii.ncu.bbs.service;
 
 import com.nediiii.ncu.bbs.entity.UserEntity;
-import org.springframework.stereotype.Service;
 
 import java.util.Iterator;
 import java.util.List;
@@ -21,6 +20,8 @@ public interface UserService {
 
     //    查
     public UserEntity selectUser(int id);
+
+    public UserEntity selectUser(String name);
 
     public UserEntity selectUser(String name, String password);
 

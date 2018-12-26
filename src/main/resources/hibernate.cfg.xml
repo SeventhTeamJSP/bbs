@@ -9,11 +9,9 @@
         <mapping class="com.nediiii.ncu.bbs.entity.CommentEntity"/>
         <mapping class="com.nediiii.ncu.bbs.entity.FavoriteEntity"/>
         <mapping class="com.nediiii.ncu.bbs.entity.FollowEntity"/>
-        <mapping class="com.nediiii.ncu.bbs.entity.PermissionEntity"/>
         <mapping class="com.nediiii.ncu.bbs.entity.PostEntity"/>
         <mapping class="com.nediiii.ncu.bbs.entity.ReportEntity"/>
         <mapping class="com.nediiii.ncu.bbs.entity.RoleEntity"/>
-        <mapping class="com.nediiii.ncu.bbs.entity.RolePermissionEntity"/>
         <mapping class="com.nediiii.ncu.bbs.entity.SectionEntity"/>
         <mapping class="com.nediiii.ncu.bbs.entity.UserEntity"/>
         <mapping class="com.nediiii.ncu.bbs.entity.UserRoleEntity"/>

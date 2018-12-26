@@ -4,13 +4,14 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "block", schema = "bbs", catalog = "")
+@Table(name = "block", schema = "bbs")
 public class BlockEntity {
     private int id;
     private int fromUserId;
     private int toTargetId;
     private int targetType;
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)
     public int getId() {

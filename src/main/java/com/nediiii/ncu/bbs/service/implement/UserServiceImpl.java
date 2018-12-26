@@ -20,7 +20,7 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
 
 
-    private static Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+    private Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
     private UserRepository userRepository;
@@ -62,6 +62,17 @@ public class UserServiceImpl implements UserService {
         } catch (Exception ex) {
             logger.warn("程序遇到被手动忽略的异常");
 //            ex.printStackTrace();
+            return null;
+        }
+        return user;
+    }
+
+    @Override
+    public UserEntity selectUser(String name) {
+        UserEntity user = null;
+        try {
+            user = userRepository.findByName(name);
+        } catch (Exception ex) {
             return null;
         }
         return user;

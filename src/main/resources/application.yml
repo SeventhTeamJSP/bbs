@@ -15,3 +15,21 @@ spring:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: false
     database: mysql
+  main:
+    allow-bean-definition-overriding: true
+
+
+security:
+  oauth2:
+    client:
+      client-id: bbs-fe
+      client-secret: bbs-fe
+
+# 配置token模式 jwt/redis
+com:
+  nediiii:
+    ncu:
+      bbs:
+        token-store-type: redis
+
+

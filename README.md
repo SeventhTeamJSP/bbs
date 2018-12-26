@@ -5,7 +5,7 @@
 - mysql 5.7
 ## how to start
 1. create a schemas which named "bbs",
-2. create a mysql user which named 'bbs' and identified by 'bbs'
+2. create a mysql user which named 'root' and identified by '123aaa'
 3. make sure the dabasource is reachable in '//localhost:3306/bbs'
 4. install the dependencies(IDEA will do it for you)
 5. start the APPLICATION in IDEA
@@ -20,7 +20,7 @@
 │   └── Swagger2Config.java
 ├── controller          controller包
 │   └── UserController.java
-├── dto                 dto包
+├── dao                 dto包
 ├── entity              实体包
 │   ├── BlockEntity.java
 │   ├── CommentEntity.java

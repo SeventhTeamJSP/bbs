@@ -3,14 +3,14 @@ package com.nediiii.ncu.bbs.controller;
 import com.nediiii.ncu.bbs.entity.UserEntity;
 import com.nediiii.ncu.bbs.service.implement.UserServiceImpl;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 @CrossOrigin
 @RestController
 @RequestMapping("/api")
@@ -47,6 +47,7 @@ public class UserController {
 
     @ApiOperation(value = "获得一个用户")
     @GetMapping("/users/{id}")
+//    @PreAuthorize("isAuthenticated()")
     public Object getUserById(@PathVariable int id) {
         UserEntity user = userService.selectUser(id);
         return new ResponseEntity<>(
@@ -55,24 +56,8 @@ public class UserController {
     }
 
     @ApiOperation(value = "获得所有用户")
-    @ApiResponses({
-            @ApiResponse(
-                    code = 200,
-                    message = "请求成功",
-                    response = com.nediiii.ncu.bbs.entity.UserEntity.class,
-                    responseContainer = "List"),
-            @ApiResponse(
-                    code = 403,
-                    message = "无权限",
-                    response = Object.class
-            ),
-            @ApiResponse(
-                    code = 404,
-                    message = "无内容",
-                    response = Object.class
-            )
-    })
     @GetMapping("/users")
+    @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public Object getUsers() {
         return userService.selectUsers();
     }

@@ -4,11 +4,12 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "section", schema = "bbs", catalog = "")
+@Table(name = "section", schema = "bbs")
 public class SectionEntity {
     private int id;
     private String name;
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)
     public int getId() {

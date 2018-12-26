@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name = "post", schema = "bbs", catalog = "")
+@Table(name = "post", schema = "bbs")
 public class PostEntity {
     private int id;
     private int userId;
@@ -19,6 +19,7 @@ public class PostEntity {
     private Byte isDeleted;
     private Byte isBlocked;
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)
     public int getId() {
