@@ -8,7 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+/**
+ *  控制器，restful风格opi
+ */
 @CrossOrigin
 @RestController
 @RequestMapping("/api")
